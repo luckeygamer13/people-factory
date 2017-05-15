@@ -1,18 +1,31 @@
 const personForm = document.querySelector('form')
 
-personForm.onsubmit = (ev) => {
+personForm.onsubmit = 
+
+const handleSbumit = (ev) => {
     ev.preventDefault()
     console.log(ev)
     const form = ev.target
     const details = document.querySelector('details')
 
     const personName = form.personName.value
+    const hairColor = form.hairColor.value
+    const age = form.age.value
+
+    const colorDiv = `
+        <div style= "height: 50px; width: 50px; background-color: ${haircolor}"></div>"
+    `
 
     
     // details.innerHTML = `<em> + ${personName} + </em>`
 
-    document.createElement('em')
-    em.textContent = personName
-    details.appendChild(em)
+    // document.createElement('em')
+    // em.textContent = personName
+    // details.appendChild(em)
+
+    details.innerHTML = `
+    <ul>
+        li<Name: ${personName}</li>
+    `
 
 }
