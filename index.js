@@ -23,6 +23,7 @@ const handleSubmit = (ev) => {
 
   details.innerHTML = `
     <ul>
+      
       <li>Name: ${personName}</li>
       <li>Hair Color: ${colorDiv}</li>
       <li>Age: ${age}</li>
