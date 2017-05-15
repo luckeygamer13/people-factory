@@ -21,15 +21,31 @@ const handleSubmit = (ev) => {
     // details.appendChild(em)
 
 
-  details.innerHTML = `
-    <ul>
-      
-      <li>Name: ${personName}</li>
-      <li>Hair Color: ${colorDiv}</li>
-      <li>Age: ${age}</li>
-      <li>Birthplace: ${birthplace}</li>
-    </ul>
-  `
+  const ul = document.createElement("ul")                       // Create a <p> element
+  ul.textContent = "Sumbission Details"       // Create a text node                                         // Append the text to <p>
+  details.appendChild(ul)                              // Append <p> to <body>
+  
+  
+  // const li1 = document.createElement("li");                       // Create a <p> element
+  // const t1 = document.createTextNode('Name:: ' + personName); //details.personName);       // Create a text node
+  // li1.appendChild(t1);                                          // Append the text to <p>
+  // ul.appendChild(li1);
+
+  // const li2 = document.createElement("li");                       // Create a <p> element
+  // const t2 = document.createTextNode('Hair Color: ' + colorDiv); //details.personName);       // Create a text node
+  // li2.appendChild(t2);                                          // Append the text to <p>
+  // ul.appendChild(li2);
+
+  const labels = document.getElementsByTagName("label")
+  
+  for (var i = 0; i < form.length - 1; i++){
+    var list = document.createElement('li')
+    list.textContent = labels[i].innerText + ': ' + form[i].value
+    ul.appendChild(list)
+  }
+
+console.log(form.length)
+
 }
 
 personForm.addEventListener('submit', handleSubmit)
