@@ -4,7 +4,7 @@ const handleSubmit = (ev) => {
     ev.preventDefault()
     console.log(ev)
     const form = ev.target
-    const details = document.querySelector('details')
+    const details = document.querySelector('.details')
 
     const personName = form.personName.value
     const hairColor = form.hairColor.value
@@ -23,7 +23,11 @@ const handleSubmit = (ev) => {
 
     details.innerHTML = `
     <ul>
-        li<Name: ${personName}</li>
-    `
+      <li>Name: ${personName}</li>
+      <li>Hair Color: ${colorDiv}</li>
+      <li>Age: ${age}</li>
+      <li>Birthplace: ${birthplace}</li>
+    </ul>
+  `
 
 }
